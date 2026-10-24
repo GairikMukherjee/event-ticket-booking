@@ -104,4 +104,6 @@ curl -X PUT localhost:8084/api/v1/admin/simulation -H "Content-Type: application
 python ../../scripts/test_payment_idempotency.py  # live checks against the running service + DB
 ```
 
+**Postman:** import [docs/postman/payment-mock.postman_collection.json](../../docs/postman/payment-mock.postman_collection.json), set the `base_url` collection variable to the service's address, and run the folders in order (or the whole collection in the Collection Runner). Every request has assertions. The same collection runs from the command line with `npx newman run docs/postman/payment-mock.postman_collection.json`.
+
 The `payment-mock` GitHub Actions workflow runs `./mvnw test` and builds the Docker image on every push or pull request that touches this folder. The latest local test run is saved in [evidence/tests/payment-mock-unit-tests.txt](../../evidence/tests/payment-mock-unit-tests.txt).
