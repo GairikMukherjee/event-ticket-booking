@@ -87,15 +87,15 @@ Each service README maps its rules to code and tests.
 
 ## Tests and challenge scripts
 
-| What | Command |
-|---|---|
-| Unit tests (per service) | `cd services/<name> && ./mvnw test` |
-| End-to-end booking flow | `python scripts/e2e_booking.py` |
-| Concurrency (Challenge 1) | `python scripts/test_inventory_concurrency.py` |
-| Inventory release / compensation | `python scripts/test_inventory_release.py` |
-| Booking idempotency (Challenge 2, Booking) | `python scripts/test_booking_idempotency.py` |
-| Payment idempotency (Challenge 2, Payment) | `python scripts/test_payment_idempotency.py` |
-| Saga with compensation (Challenge 3C) | `python scripts/test_saga_compensation.py` |
+| What | Java Command (Zero dependencies) | Python Command |
+|---|---|---|
+| Unit tests (per service) | `cd services/<name> && ./mvnw test` | — |
+| End-to-end booking flow | `java scripts/E2EBooking.java` | `python scripts/e2e_booking.py` |
+| Booking idempotency (Challenge 2, Booking) | `java scripts/TestBookingIdempotency.java` | `python scripts/test_booking_idempotency.py` |
+| Saga with compensation (Challenge 3C) | `java scripts/TestSagaCompensation.java` | `python scripts/test_saga_compensation.py` |
+| Concurrency (Challenge 1) | — | `python scripts/test_inventory_concurrency.py` |
+| Inventory release / compensation | — | `python scripts/test_inventory_release.py` |
+| Payment idempotency (Challenge 2, Payment) | — | `python scripts/test_payment_idempotency.py` |
 
 Evidence for each challenge is in [evidence/](evidence/), with a README per folder linking each file to a claim.
 

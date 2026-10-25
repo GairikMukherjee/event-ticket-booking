@@ -105,12 +105,14 @@ Content-Type: application/json
 # Unit & Web-layer tests (15 unit tests, mock-based, no external dependencies needed)
 ./mvnw test
 
-# End-to-end happy path booking
-python ../../scripts/e2e_booking.py
+# End-to-end happy path booking (Pure Java 21)
+java ../../scripts/E2EBooking.java
 
-# Challenge 2: Booking Idempotency (sequential replay, concurrent race, payload conflict)
-python ../../scripts/test_booking_idempotency.py
+# Challenge 2: Booking Idempotency (Pure Java 21)
+java ../../scripts/TestBookingIdempotency.java
 
-# Challenge 3C: Saga Orchestration & Compensation (forced payment failure & reservation release)
-python ../../scripts/test_saga_compensation.py
+# Challenge 3C: Saga Orchestration & Compensation (Pure Java 21)
+java ../../scripts/TestSagaCompensation.java
 ```
+
+*(Python scripts are also provided in `scripts/` as alternative runners if needed).*
